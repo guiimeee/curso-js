@@ -17,6 +17,36 @@
             background: rgba(0, 0, 0, 0.322);
             color: white;
             font: normal 1.6rem Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        #txtn1, #txtn2 {
+            width: 200px;
+            padding: 13px;
+            text-align: center;
+            font-size: 2rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input:nth-child(4) {
+            width: 100px;
+            padding: 10px;
+            font-size: 1.6rem;
+            border: none;
+            border-radius: 5px;
+            background: lightgreen;
+            cursor: pointer;
+        }
+
+        .res {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: rgb(63, 47, 23);
         }
 
     </style>
@@ -24,9 +54,25 @@
 <body>
 
     <h1>Somando Valores</h1>
-    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn1" id="txtn1">+
     <input type="number" name="txtn2" id="txtn2">
     <input type="button" value="Somar" onclick="somar()">
+    <div class="res">Resultado:</div>
     
+
+    <script>
+
+        let tn1 = document.querySelector('#txtn1')
+        let tn2 = document.querySelector('#txtn2')
+        let n1 = Number(tn1.value)
+        let n2 = Number(tn2.value)
+        let res = document.querySelector('.res')
+        let soma = n1 + n2
+
+        function somar() {
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${soma}</strong>.`
+        }
+
+    </script>
 </body>
 </html>
