@@ -4,7 +4,7 @@ function load() {
     let minutos = data.getMinutes().toString().padStart(2, '0')
     let msg = document.querySelector('#msg')
     let img = document.querySelector('#imagem')
-
+    
     msg.innerHTML = `Agora são ${hora}h${minutos}`
     if(hora < 12) {
         img.src = './manha.png'
